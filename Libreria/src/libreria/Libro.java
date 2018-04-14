@@ -12,6 +12,7 @@ import java.util.Objects;
  * @author 77873875
  */
 public class Libro {
+   
     private String titolo;
     private String autore;
     private String casaEditrice;
@@ -23,7 +24,7 @@ public class Libro {
      * @param autore 
      * @param casaEditrice
      * @param genere
-     * @param codice 
+     * @param codice codice ISBN del libro
      */
 
     public Libro(String titolo, String autore, String casaEditrice, String genere, String codice) {
@@ -33,10 +34,13 @@ public class Libro {
         this.genere = genere;
         this.codice = codice;
     }
-    /**
-     * 
-     * @ClassConstructor
-     */
+    public Libro(Libro libro) {
+        this.titolo = libro.titolo;
+        this.autore = libro.autore;
+        this.casaEditrice = libro.casaEditrice;
+        this.genere = libro.genere;
+        this.codice = libro.codice;
+    }
 
     public String getTitolo() {
         return titolo;
@@ -45,11 +49,11 @@ public class Libro {
     public void setTitolo(String titolo) {
         this.titolo = titolo;
     }
-
+    
     public String getAutore() {
         return autore;
     }
-
+ 
     public void setAutore(String autore) {
         this.autore = autore;
     }
